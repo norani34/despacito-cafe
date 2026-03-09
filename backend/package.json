@@ -1,0 +1,38 @@
+{
+  "name": "despacito-cafe-backend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "node dist/main.js",
+    "dev": "ts-node-dev --respawn --transpile-only src/main.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev"
+  },
+  "dependencies": {
+    "@nestjs/common": "^9.0.0",
+    "@nestjs/core": "^9.0.0",
+    "@nestjs/platform-express": "^9.0.0",
+    "@nestjs/config": "^2.2.0",
+    "@prisma/client": "^5.0.0",
+    "@aws-sdk/client-s3": "^3.428.0",
+    "@aws-sdk/s3-request-presigner": "^3.428.0",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.0",
+    "cookie-parser": "^1.4.6",
+    "helmet": "^7.0.0",
+    "express-rate-limit": "^6.7.0",
+    "argon2": "^0.30.0",
+    "jsonwebtoken": "^9.0.0",
+    "@nestjs/jwt": "^10.0.0",
+    "pino": "^8.10.0",
+    "reflect-metadata": "^0.1.13",
+    "rimraf": "^3.0.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.5.0",
+    "prisma": "^5.0.0"
+  }
+}

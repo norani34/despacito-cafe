@@ -68,7 +68,7 @@ export default function Navbar() {
                 to={link.href}
                 className="relative group py-2"
               >
-                <span className={`text-sm font-medium uppercase tracking-widest transition-colors duration-300 ${
+                <span className={`text-sm font-medium tracking-widest transition-colors duration-300 ${
                   location.pathname === link.href
                     ? 'text-rose-dark'
                     : 'text-espresso/80 group-hover:text-espresso'

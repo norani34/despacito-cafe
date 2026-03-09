@@ -58,7 +58,7 @@ export default function About() {
               <div className="grid grid-cols-3 gap-6 mt-12">
                 {[
                   { icon: <Coffee size={24} />, label: { ar: 'قهوة مميزة', en: 'Premium Coffee' } },
-                  { icon: <Heart size={24} />, label: { ar: 'صنع بحب', en: 'Made with Love' } },
+                  { icon: <Heart size={24} />, label: { ar: 'معمول بحب', en: 'Made with Love' } },
                   { icon: <Users size={24} />, label: { ar: 'مجتمعنا', en: 'Community' } },
                 ].map((item, idx) => (
                   <div key={idx} className="flex flex-col items-center text-center gap-3">

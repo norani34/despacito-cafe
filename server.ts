@@ -171,6 +171,10 @@ async function startServer() {
 
   // Vite middleware
   if (process.env.NODE_ENV !== 'production') {
+    // Serve static preview assets (images) from the built `dist` folder in dev
+    // so the dev server shows the same pictures as the `vite preview` output.
+    app.use('/The Atmosphere', express.static(path.join(__dirname, 'dist', 'The Atmosphere')));
+
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: 'spa',

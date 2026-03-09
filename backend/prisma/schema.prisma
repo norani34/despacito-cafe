@@ -1,0 +1,72 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  role      String   @default("USER")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  memories  Memory[]
+  songs     Song[]
+  refreshTokens RefreshToken[]
+}
+
+model RefreshToken {
+  id        Int      @id @default(autoincrement())
+  tokenHash String
+  jti       String   @unique
+  user      User     @relation(fields: [userId], references: [id])
+  userId    Int
+  revoked   Boolean  @default(false)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+}
+
+model Memory {
+  id        Int      @id @default(autoincrement())
+  user      User?    @relation(fields: [userId], references: [id])
+  userId    Int?
+  userName  String
+  text_en   String
+  text_ar   String
+  image     String?
+  color     String?
+  rotate    String?
+  client_id String?
+  visibility String  @default("PUBLIC")
+  deletedAt DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Song {
+  id        Int      @id @default(autoincrement())
+  title     String
+  artist    String
+  duration  String
+  added_by  String?
+  client_id String?
+  user      User?    @relation(fields: [userId], references: [id])
+  userId    Int?
+  deletedAt DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Contact {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String
+  message   String
+  ip        String?
+  createdAt DateTime @default(now())
+  handled   Boolean  @default(false)
+}

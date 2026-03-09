@@ -10,14 +10,14 @@ export default function Contact() {
     {
       icon: <MapPin size={32} />,
       title: t('contact.location'),
-      content: t('contact.address'),
+      content: '',
       color: 'bg-rose-100 text-rose-600',
       delay: 0.1
     },
     {
       icon: <Phone size={32} />,
       title: t('contact.phone'),
-      content: '0102 004 0656',
+      content: '',
       color: 'bg-blue-100 text-blue-600',
       delay: 0.2
     },

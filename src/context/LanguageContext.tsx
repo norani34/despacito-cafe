@@ -55,7 +55,7 @@ const translations: Record<string, Record<Language, string>> = {
 
   // Footer
   'footer.rights': { ar: '© 2026 ديسباسيتو كافيه. كل الحقوق محفوظة.', en: '© 2026 Despacito Café. All rights reserved.' },
-  'footer.crafted': { ar: 'معمول بحب في الفيوم', en: 'Made with love in Fayoum' },
+  'footer.crafted': { ar: 'معمول بحب', en: 'Made with love' },
 
   // Menu Categories
   'menu.hot': { ar: 'مشروبات سخنة', en: 'Hot Drinks' },

@@ -24,7 +24,7 @@ const moodOptions = [
     label: { ar: 'رايق', en: 'Chill' }, 
     gradient: 'from-sky-400 to-indigo-500',
     shadow: 'shadow-indigo-500/40',
-    img: 'https://images.unsplash.com/photo-1517701604599-bb29b5c7fa69?q=80&w=2670&auto=format&fit=crop',
+    img: '/modes/Iced%20Latte.jpg',
     recommendation: {
       drink: { ar: 'لاتيه بارد', en: 'Iced Latte' },
       desc: { ar: 'هدوء وانتعاش في كل رشفة.', en: 'Smooth, cool, and perfectly balanced.' },
@@ -37,7 +37,7 @@ const moodOptions = [
     label: { ar: 'مبسوط', en: 'Happy' }, 
     gradient: 'from-yellow-300 to-amber-500',
     shadow: 'shadow-amber-500/40',
-    img: 'https://images.unsplash.com/photo-1626803775151-61d756612f97?q=80&w=2670&auto=format&fit=crop',
+    img: '/modes/Strawberry%20Smoothie.jpg',
     recommendation: {
       drink: { ar: 'سموذي فراولة', en: 'Strawberry Smoothie' },
       desc: { ar: 'طعم الفرحة في كوباية.', en: 'Sweet, vibrant, and full of life.' },
@@ -50,7 +50,7 @@ const moodOptions = [
     label: { ar: 'رومانسي', en: 'Romantic' }, 
     gradient: 'from-rose-400 to-pink-600',
     shadow: 'shadow-pink-500/40',
-    img: 'https://images.unsplash.com/photo-1624353365286-3f8d62daad51?q=80&w=2670&auto=format&fit=crop',
+    img: '/modes/Molten%20Cake.jpg',
     recommendation: {
       drink: { ar: 'مولتن كيك', en: 'Molten Cake' },
       desc: { ar: 'دفا وحب في كل قطمة.', en: 'Warm, gooey chocolate love.' },
@@ -63,7 +63,7 @@ const moodOptions = [
     label: { ar: 'مركز', en: 'Focused' }, 
     gradient: 'from-emerald-400 to-teal-600',
     shadow: 'shadow-teal-500/40',
-    img: 'https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=2671&auto=format&fit=crop',
+    img: '/modes/V60%20Pour%20Over.jpg',
     recommendation: {
       drink: { ar: 'V60', en: 'V60 Pour Over' },
       desc: { ar: 'صفاء ذهني وتركيز عالي.', en: 'Clarity and precision in a cup.' },
@@ -76,7 +76,7 @@ const moodOptions = [
     label: { ar: 'متعصب', en: 'Angry' }, 
     gradient: 'from-red-500 to-rose-600',
     shadow: 'shadow-red-500/40',
-    img: 'https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=2537&auto=format&fit=crop',
+    img: '/modes/Lemon%20Mint.jpg',
     recommendation: {
       drink: { ar: 'ليمون بالنعناع', en: 'Lemon Mint' },
       desc: { ar: 'انتعاش يهدى أعصابك.', en: 'Cool, refreshing, and calming.' },
@@ -89,7 +89,7 @@ const moodOptions = [
     label: { ar: 'زعلان', en: 'Sad' }, 
     gradient: 'from-slate-400 to-gray-600',
     shadow: 'shadow-gray-500/40',
-    img: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?q=80&w=2521&auto=format&fit=crop',
+    img: '/modes/Hot%20Chocolate.jpg',
     recommendation: {
       drink: { ar: 'هوت شوكليت', en: 'Hot Chocolate' },
       desc: { ar: 'حضن دافي في كوباية.', en: 'A warm hug in a cup.' },
@@ -98,8 +98,8 @@ const moodOptions = [
   },
 ];
 
-const VibeSelector = ({ language, t }: { language: string, t: any }) => {
-  const [selectedMood, setSelectedMood] = useState<string | null>('chill');
+  const VibeSelector = ({ language, t }: { language: string, t: any }) => {
+  const [selectedMood, setSelectedMood] = useState<string | null>(null);
 
   const currentMood = moodOptions.find(m => m.id === selectedMood);
 
@@ -252,9 +252,9 @@ export default function Home() {
   ];
 
   const signatures = [
-    { name: { ar: 'مولتن كيك', en: 'Molten Cake' }, price: '90', img: 'https://images.unsplash.com/photo-1624353365286-3f8d62daad51?q=80&w=2670&auto=format&fit=crop' },
-    { name: { ar: 'آيس سبانيش', en: 'Iced Spanish' }, price: '75', img: 'https://images.unsplash.com/photo-1579992353560-fd1d929f406f?q=80&w=2574&auto=format&fit=crop' },
-    { name: { ar: 'لوتس تشيز كيك', en: 'Lotus Cheesecake' }, price: '85', img: 'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?q=80&w=2670&auto=format&fit=crop' },
+    { name: { ar: 'مولتن كيك', en: 'Molten Cake' }, price: '90', img: '/Signature%20Creations/Molten%20Cake.jpg' },
+    { name: { ar: 'آيس سبانيش', en: 'Iced Spanish' }, price: '75', img: '/Signature%20Creations/Iced%20Spanish.jpg' },
+    { name: { ar: 'لوتس تشيز كيك', en: 'Lotus Cheesecake' }, price: '85', img: '/Signature%20Creations/Lotus%20Cheesecake.jpg' },
   ];
 
   return (
@@ -438,10 +438,7 @@ export default function Home() {
                 </div>
                 
                 <h3 className="text-3xl font-serif text-espresso mb-3 group-hover:text-rose-dark transition-colors">{item.name[language as 'ar'|'en']}</h3>
-                <div className="flex items-center justify-center gap-2 text-espresso/60 font-bold tracking-widest text-sm">
-                  <span>{item.price}</span>
-                  <span className="text-[10px]">{t('common.currency')}</span>
-                </div>
+                {/* price removed until real data is provided */}
               </motion.div>
             ))}
           </div>
@@ -489,15 +486,15 @@ export default function Home() {
                 style={{ y: y1 }}
                 className="space-y-6"
               >
-                <img loading="lazy" src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=2574&auto=format&fit=crop" className="rounded-[2rem] w-full aspect-[3/4] object-cover opacity-60 hover:opacity-100 transition-all duration-700 grayscale hover:grayscale-0" />
-                <img loading="lazy" src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=2574&auto=format&fit=crop" className="rounded-[2rem] w-full aspect-square object-cover opacity-60 hover:opacity-100 transition-all duration-700 grayscale hover:grayscale-0" />
+                <img loading="lazy" src="/The%20Atmosphere/WhatsApp%20Image%202026-02-26%20at%2012.04.27%20AM%20%281%29.jpeg" className="rounded-[2rem] w-full aspect-[3/4] object-cover opacity-60 hover:opacity-100 transition-all duration-700 grayscale hover:grayscale-0" />
+                <img loading="lazy" src="/The%20Atmosphere/WhatsApp%20Image%202026-02-28%20at%2011.29.06%20PM%20%281%29.jpeg" className="rounded-[2rem] w-full aspect-square object-cover opacity-60 hover:opacity-100 transition-all duration-700 grayscale hover:grayscale-0" />
               </motion.div>
               <motion.div 
                 style={{ y: y2 }}
                 className="space-y-6 pt-20"
               >
-                <img loading="lazy" src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=2671&auto=format&fit=crop" className="rounded-[2rem] w-full aspect-square object-cover opacity-60 hover:opacity-100 transition-all duration-700 grayscale hover:grayscale-0" />
-                <img loading="lazy" src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2647&auto=format&fit=crop" className="rounded-[2rem] w-full aspect-[3/4] object-cover opacity-60 hover:opacity-100 transition-all duration-700 grayscale hover:grayscale-0" />
+                <img loading="lazy" src="/The%20Atmosphere/WhatsApp%20Image%202026-02-28%20at%2011.29.06%20PM.jpeg" className="rounded-[2rem] w-full aspect-square object-cover opacity-60 hover:opacity-100 transition-all duration-700 grayscale hover:grayscale-0" />
+                <img loading="lazy" src="/The%20Atmosphere/WhatsApp%20Image%202026-02-28%20at%2011.29.07%20PM.jpeg" className="rounded-[2rem] w-full aspect-[3/4] object-cover opacity-60 hover:opacity-100 transition-all duration-700 grayscale hover:grayscale-0" />
               </motion.div>
             </div>
           </div>
