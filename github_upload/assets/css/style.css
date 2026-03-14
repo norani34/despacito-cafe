@@ -1,0 +1,8 @@
+/* Example stylesheet for github_upload preview */
+:root{--bg:#fafafa;--card:#ffffff;--muted:#6b7280}
+html,body{height:100%}body{margin:0;background:var(--bg);font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial;color:#111}
+.wrap{max-width:920px;margin:40px auto;padding:20px}
+.card{background:var(--card);border:1px solid #e6e9ef;padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(16,24,40,0.04)}
+.hero{display:flex;flex-direction:column;gap:10px}
+.muted{color:var(--muted);font-size:0.95rem}
+.btn{display:inline-block;padding:8px 12px;background:#0366d6;color:#fff;border-radius:8px;text-decoration:none}
