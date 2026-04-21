@@ -17,6 +17,10 @@
         // ensure initial position is at top on page load
         setTimeout(function(){ window.scrollTo(0,0); document.documentElement.scrollTop = 0; }, 0);
       });
+      // On bfcache/pageshow restore, force top position again
+      window.addEventListener('pageshow', function(e){
+        setTimeout(function(){ window.scrollTo(0,0); document.documentElement.scrollTop = 0; }, 150);
+      });
     </script>
     <script>
       (function(){
