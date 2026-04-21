@@ -10,6 +10,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <base href="./">
     <script>
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+      window.addEventListener('load', function() {
+        // ensure initial position is at top on page load
+        setTimeout(function(){ window.scrollTo(0,0); document.documentElement.scrollTop = 0; }, 0);
+      });
+    </script>
+    <script>
       (function(){
         const _fetch = window.fetch.bind(window);
         window.fetch = function(resource, init){
